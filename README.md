@@ -18,7 +18,7 @@ This is a simple web application built with Flask for converting currencies. It 
 First, clone the repository to your local machine:
 
 ```bash
-git clone [URL of Your Repository]
+git clone [https://github.com/vib795/flask-currency-converter.git]
 cd currency-converter
 ```
 Then, create and activate a virtual environment:

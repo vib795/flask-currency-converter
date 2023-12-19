@@ -19,3 +19,4 @@ venv/bin/python3.10
 venv/lib64/python3.10
 venv/lib/python3.10
 __pycache__/
+node_modules/

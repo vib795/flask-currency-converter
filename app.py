@@ -35,6 +35,3 @@ def convert():
                            from_currency=from_currency, 
                            to_currency=to_currency, 
                            amount=amount)
-
-if __name__ == '__main__':
-    app.run(debug=True)

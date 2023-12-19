@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form action="/convert" method="post">
+        <input type="text" name="amount" placeholder="Amount" value="{{ amount }}">
+        <select name="from_currency">
+            {% for currency in currencies %}
+                <option value="{{ currency }}" {% if currency == from_currency %}selected{% endif %}>{{ currency }}</option>
+            {% endfor %}
+        </select>
+        <select name="to_currency">
+            {% for currency in currencies %}
+                <option value="{{ currency }}" {% if currency == to_currency %}selected{% endif %}>{{ currency }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Convert">
+    </form>
+
+    {% if converted_amount %}
+        <h2>Converted Amount: {{ converted_amount }}</h2>
+    {% endif %}
+</body>
+</html>

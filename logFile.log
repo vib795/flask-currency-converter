@@ -1,0 +1,20 @@
+2023-12-20 10:48:36,268 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-12-20 10:48:36,268 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-12-20 10:48:41,782 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:48:41] "GET / HTTP/1.1" 200 -
+2023-12-20 10:48:41,817 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:48:41] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -
+2023-12-20 10:48:43,916 - app - ERROR - Unexpect error error: could not convert string to float: ''
+2023-12-20 10:48:43,917 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:48:43] "POST /convert HTTP/1.1" 200 -
+2023-12-20 10:48:43,942 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:48:43] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -
+2023-12-20 10:50:27,931 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-12-20 10:50:27,931 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-12-20 10:50:31,950 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:31] "GET / HTTP/1.1" 200 -
+2023-12-20 10:50:32,004 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:32] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -
+2023-12-20 10:50:34,087 - app - ERROR - Unexpect error error: could not convert string to float: ''
+2023-12-20 10:50:34,088 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:34] "POST /convert HTTP/1.1" 200 -
+2023-12-20 10:50:34,114 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:34] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -
+2023-12-20 10:50:38,330 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:38] "POST /convert HTTP/1.1" 200 -
+2023-12-20 10:50:38,356 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:38] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -
+2023-12-20 10:50:40,406 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:40] "POST /convert HTTP/1.1" 200 -
+2023-12-20 10:50:40,425 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2023 10:50:40] "[33mGET /_vercel/insights/script.js HTTP/1.1[0m" 404 -

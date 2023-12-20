@@ -1,5 +1,15 @@
 from flask import Flask, render_template, request
 import requests
+import logging
+
+logging.basicConfig(level=logging.INFO, 
+                    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                    handlers=[
+                        logging.StreamHandler(),
+                        logging.FileHandler('logFile.log')
+                    ])
+
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -13,25 +23,34 @@ def index():
 
 @app.route('/convert', methods=['POST'])
 def convert():
-    amount = request.form.get('amount')
-    from_currency = request.form.get('from_currency')
-    to_currency = request.form.get('to_currency')
+    try:
+        amount = request.form.get('amount')
+        from_currency = request.form.get('from_currency')
+        to_currency = request.form.get('to_currency')
 
-    # Fetch the list of available currencies (for dropdown)
-    response = requests.get('https://api.exchangerate-api.com/v4/latest/USD')
-    currencies = response.json().get('rates', {}).keys()
+        # Fetch the list of available currencies (for dropdown)
+        response = requests.get('https://api.exchangerate-api.com/v4/latest/USD')
+        currencies = response.json().get('rates', {}).keys()
 
-    # Call the API to get the conversion rate
-    response = requests.get(f'https://api.exchangerate-api.com/v4/latest/{from_currency}')
-    rates = response.json().get('rates', {})
+        # Call the API to get the conversion rate
+        response = requests.get(f'https://api.exchangerate-api.com/v4/latest/{from_currency}')
+        rates = response.json().get('rates', {})
 
-    conversion_rate = rates.get(to_currency, 0)
-    converted_amount = float(amount) * conversion_rate if conversion_rate else 0
+        conversion_rate = rates.get(to_currency, 0)
+        converted_amount = float(amount) * conversion_rate if conversion_rate else 0
 
-    # Render the same page with conversion results
-    return render_template('index.html', 
-                           currencies=currencies, 
-                           converted_amount=round(converted_amount, 2), 
-                           from_currency=from_currency, 
-                           to_currency=to_currency, 
-                           amount=amount)
+        # Render the same page with conversion results
+        return render_template('index.html', 
+                            currencies=currencies, 
+                            converted_amount=round(converted_amount, 2), 
+                            from_currency=from_currency, 
+                            to_currency=to_currency, 
+                            amount=amount)
+    except Exception as e:
+        logger.error(f"Unexpect error error: {e}")
+        return render_template('index.html',
+                               currencies=currencies, 
+                                converted_amount=0, 
+                                from_currency=from_currency, 
+                                to_currency=to_currency, 
+                                amount=amount)
